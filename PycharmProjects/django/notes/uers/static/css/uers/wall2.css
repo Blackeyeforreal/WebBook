@@ -1,0 +1,222 @@
+
+.the_wall{
+
+background-color: azure;
+display: flex;
+flex-direction: row;
+}
+
+.profile_pic{
+ height: 40px;
+  width: 40px;
+/*! margin: auto; */
+}
+
+.middle{
+    min-width: 45%;
+    background-color: #f4f4f4;
+display:flex;
+flex-direction:column;
+    margin-left: 20%;
+}
+
+.pdes{
+    
+    box-shadow: 34px;
+    background-color: white;
+margin:34;
+
+    margin-left: 10%;
+    margin-right: 10%;
+    border-top: 1px solid;
+    padding-top: 5%;
+}
+
+.arrow{
+    border-bottom: 18px solid #fff;
+    border-bottom-color: rgb(255, 255, 255);
+border-left: 18px solid transparent;
+border-right: 18px solid transparent;
+bottom: -18px;
+height: 0;
+
+transform: translateX(21%);
+width: 0;
+z-index: 1;
+
+
+}
+
+.friend_list{
+display:flex;
+flex-direction:row;
+
+
+}
+.fpro{
+    height: 50px;
+    width: 50px;
+}
+
+.fp_S{
+    border: none;
+    background-color: transparent;
+    border-bottom: 1px solid;
+        
+  
+    margin: auto;
+    font-size: 25px;
+    padding-right:10px
+ 
+}
+.instp{
+    margin-bottom: 5%;
+    height: 37px;
+    width: 100%;
+        border-top-width: 0;
+border-left-width: 0;
+border-right-width: 0;
+padding-left: 0;
+    border-radius: 34px;
+}
+.instpo{
+    display: flex;
+    flex-direction: column;
+    
+}
+.yp{
+    box-shadow: 5px 3px 6px 0 rgba(32, 33, 36, 0.28);
+    margin: 7%;
+    display: flex;
+    flex-direction: column;
+}
+.rec{
+    
+
+border-left: 1px solid ;
+
+    margin-left: 20px;
+   
+    width: 90%;
+    min-height: 15%;
+background-color: #fff;
+border-right: 1px solid;
+border-bottom: 1px solid;
+}
+.maza{
+ 
+    width: 40%;
+    background-color:#f4f4f4;;
+}
+
+.left-sec{
+    
+position: fixed;
+    background-color: #fff;
+min-height: 80%;
+margin-right: 34;
+    min-width: 20%;
+
+border-right: 1px solid ;
+
+margin-top: 5%;
+box-shadow: 3px 4px 6px 0 rgba(32, 33, 36, 0.28);
+}
+.subject-pf{
+    display: flex;
+    
+    background-color: #a3e386;
+    margin-left: 10%;
+    margin-right: 10%;
+    border-radius: 24px;
+    /*! margin-top: px; */
+}
+
+.arr-b{
+    margin: auto;
+    font-size: 29px;
+}
+.psub{
+    margin: auto;
+}
+
+.post{
+    border-top:1px solid;
+    border-bottom:1px solid;
+    box-shadow: 5px 5px 8px 0 rgba(32, 33, 36, 0.28);
+    margin: auto;
+    max-width: 60%;
+    margin-bottom:3%;
+    min-width: 60%;
+    margin-top: 7%;
+}
+ 
+.instptext{
+    width: 100%;
+}
+.bookm{
+    align-self: flex-end;
+    font-size: 39;
+    color: green;
+}
+
+.rec_book{
+    margin-left:25%;
+    
+}.mySlides{
+    width: 20%;    margin: auto;}
+
+.likesec{
+   
+    border-top:1px solid;
+    width: 50%;
+    margin: auto;
+    margin-bottom: 1%;
+    padding-top: 1%;
+    
+    
+}
+.like{
+    font-size: 27;
+    margin-left: 27%
+}
+.refer{
+    
+     display: flex;
+    height: 3%;
+    margin-top: 2%; 
+    width: max-content;
+    background-color: #fdd4c0;
+    margin-left: 13%;
+    margin-right: 10%;
+    border-radius: 24px;
+    /*! margin-top: px; */
+}
+.comment_sec{
+    height: 3%;
+    
+    width: 60%;
+    background-color: transparent;
+   margin: auto;
+    border-radius: 24px;
+    margin-bottom: 2%; 
+    
+    /*! margin-top: px; */
+}
+.comment_input{
+
+    border-bottom: 1px;
+    border-top: 0px;
+    border-left: 0px
+    
+}
+.comment_submit{
+    border:none;
+   
+ 
+    
+}
+.comment-form{
+    width: max-content;
+    margin: auto;
+}

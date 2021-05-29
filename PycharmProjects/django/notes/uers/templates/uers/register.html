@@ -1,0 +1,29 @@
+{% extends "Main_truct.html" %}
+{% block content %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/register.css' %}">
+<div class="content-section">
+    <div class="form-group">
+    <form method="post">
+        {% csrf_token %}
+        <fieldset class="form-group2">
+            <lengend class="border-bottom mb-4"> Join today</lengend>
+            {{form.as_p}}
+        </fieldset>
+
+
+
+            <button type="submit"> Sing up</button>
+        </div>
+
+
+    </form>
+        <div class="border-top pt-3">
+            <small class="text-muted">
+                already have an account? <a class="ml-2" href="{% url 'login' %}">sign in</a>
+            </small> </div>
+
+</div>
+
+
+{% endblock content %}

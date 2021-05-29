@@ -1,0 +1,55 @@
+.log{
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  
+  width:400px;
+  
+  
+  margin-left: auto;
+  margin-right: auto;
+  background-color: white;
+}
+.form-group{
+  
+  padding:10%;
+  
+}
+
+.login{
+  margin-bottom: 56px;
+  
+  text-align: center;
+  color: #1b1b1b;
+font-size: 1.5rem;
+font-weight: 600;
+font-family: "Segoe UI","Helvetica Neue","Lucida Grande","Roboto","Ebrima","Nirmala UI","Gadugi","Segoe Xbox Symbol","Segoe UI Symbol","Meiryo UI","Khmer UI","Tunga","Lao UI","Raavi","Iskoola Pota","Latha","Leelawadee","Microsoft YaHei UI","Microsoft JhengHei UI","Malgun Gothic","Estrangelo Edessa","Microsoft Himalaya","Microsoft New Tai Lue","Microsoft PhagsPa","Microsoft Tai Le","Microsoft Yi Baiti","Mongolian Baiti","MV Boli","Myanmar Text","Cambria Math";
+
+}
+#id_password{
+      border-top-width: 0;
+    border-left-width: 0;
+    border-right-width: 0;
+    padding-left: 0;
+  border-block-color: black;
+  
+}
+#id_username{
+  border-block-color: black;
+      border-top-width: 0;
+    border-left-width: 0;
+    border-right-width: 0;
+    padding-left: 0;
+
+}
+.login-block{
+  padding-top: 10px;
+  
+}
+.smallhome{
+  
+  position: relative;
+min-height: 1px;
+padding-left: 2px;
+padding-right: 5px;
+  
+  
+}

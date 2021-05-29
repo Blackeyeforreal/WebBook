@@ -1,0 +1,309 @@
+{% extends "Main_truct.html" %}
+{% load static %}
+{% block content %}
+
+<script src="{% static 'script/simple.js' %}"></script>
+  <script src="{% static 'script/index.js' %}"></script>
+
+<!-- Button trigger modal -->
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Document Form</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+          {% block rec_form %}
+                   <div class="import-books" style="display:none;"
+        id ="i">
+             <form method="post" enctype="multipart/form-data">
+                 {% csrf_token %}
+                    {{ form.as_p }}
+
+
+
+
+        </div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <input type="submit" name="documentsent"  value="ver" class="btn btn-primary">
+           {% endblock rec_form %}
+          </form>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="side-bars">
+
+    <div  class = "sidebar-struct" >
+          <div class="cont-head">
+              <script>
+                  function showdoc(){
+
+    var cards = document.getElementsByClassName("import-books");
+    console.log(cards);
+
+
+    if (cards[0].style.display == "block")
+    {
+    cards[0].classList.toggle("show");
+    cards[0].style.display = "none";}
+    else{cards[0].style.display = "block";
+    cards[0].classList.toggle("show");}
+}
+              </script>
+        <i type="button" class="i_button fas fa-plus btn btn-primary" data-toggle="modal" data-target="#staticBackdrop" onclick="showdoc()"></i>
+        <i type="button" id="opend"  class="i_button fas fa-trash" onclick="delete_Show()"></i>
+    </div>
+
+        <div class="book_col">
+
+
+
+            {% for n in books %}
+
+            <div class="books-div">
+                <div class="bton_bi">
+                    <script>$(function() {
+$('.bcross').click(function(){
+var id;
+id = $(this).attr("data-catid");
+$.ajax(
+{
+    type:"GET",
+    url: "dele",
+    data:{
+             book_id: id
+},success: function( data )
+{
+    $( '#like'+ id ).removeClass('btn btn-primary btn-lg');
+    $( '#like'+ id ).addClass('btn btn-success btn-lg'); } }) }) });
+</script>
+                <!-- <button class ="book-button"  onclick= "show({{ forloop.counter }})"  value="">{{n.id}} </button>
+         <i type="button" onclick="showodoc()" class="bcross material-icons" data-catid="{{n.id }}"  id="del{{ n.id }}">cancel</i>-->
+
+
+
+                </div>
+<div class="folder_grp_div d-flex">
+  <div class="folder_grp btn-group">
+
+  <a href=" {% url 'book_summary' value=n.id %}"> <button type="button" onclick="show({{ forloop.counter }})" class="book-button btn btn-secondary"> <i class="fold material-icons">folder_open</i> {{n.Name}}</button></a>
+    <button type="button" class="bcross2 btn btn-secondary dropdown-toggle dropdown-toggle-split" id="dropdownMenuReference" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-reference="parent">
+
+      <span class="sr-only">Toggle Dropdown</span>
+
+    </button>  <i type="button" onclick="showodoc()" class="bcross material-icons" data-catid="{{n.id }}"  id="del{{ n.id }}">cancel</i>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuReference">
+      <a onclick="callpdf('{{ n.document.name}}')" class="dropdown-item" href="{{ n.document.name}}">word meaning</a>
+      <a onclick="callpdf('{{ n.document.name}}')" class="dropdown-item" href="in/{{ n.document.name}}">Quotations</a>
+
+      <div class="dropdown-divider"></div>
+      <a class="dropdown-item" href="#">Separated link</a>
+    </div>
+  </div>
+</div>
+            <!--    <ul onclick="show({{ forloop.counter }})" class="book-text list-group list-group-flush" >
+                    <li class="books-atr">
+                        <input type="hidden" value="{{ n.document.name}}" name="{{n.document.name}}">
+                          <a class="coust" onclick="callpdf('{{ n.document.name}}')" href="#"> {{n.Name}}<span class="sr-only">(current)</span></a>
+
+                    </li>
+                    <li class="books-atr list-group-item">
+                        <a class="coust" onclick="callpdf('{{ n.document.name}}')" href=" {{n.document.url}}"> WORDS <span class="sr-only">(current)</span></a>
+
+                        </li>
+                    <li class="books-atr list-group-item">
+                            <a class="coust" onclick="callpdf('{{ n.document.name}}')" href="{{ n.document.name}}_quote"> quate<span class="sr-only">(current)</span></a>
+                        </li>
+
+                    </ul> -->
+
+            </div>
+
+            {% endfor %}
+        </div>
+
+
+
+    </div>
+
+    <!--sid bar lef ends -->
+
+
+    <!-- pdf viewer star -->
+{% block sum %}
+  <script src="//mozilla.github.io/pdf.js/build/pdf.js"></script>
+
+    <div class= "pdf">
+        <div class= "pdf2">
+
+              <button id="prev">Previous</button>
+              <button id="next">Next</button>
+
+              <span>Page: <span id="page_num"></span> / <span id="page_count"></span></span>
+            </div>
+        <canvas id="the-canvas"></canvas>
+        <script src = "{% static 'script/simple.js' %}"> </script>
+
+    </div>
+    {% endblock sum %}
+        <!-- s
+       ide bar right starts -->
+
+    <div class="modal fade" id="staticBackdrop2" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel2" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel2">PDF form</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+
+               <form method="post" enctype="multipart/form-data">
+                 {% csrf_token %}
+                    {{ formpdf.as_p }}
+
+
+
+
+
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="submit" name="pdf" value="button2">Upload</button>
+             </form>w
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+            <div  class = "sidebar-struct-right" >
+                  <div class="cont-head">
+                    <i type="button" class="i_button fas fa-plus" data-toggle="modal" data-target="#staticBackdrop2" onclick="showdoc2()"></i>
+                    <i type="button"  class="i_button fas fa-trash" onclick="delete_Show()"></i>
+                    </div>
+                 <div class="book_col">
+                    {% for n in pdf %}
+
+                    <div class="books-div">
+                        <div class="bton_bi">
+                            <script>$(function() {
+$('.bcross').click(function(){
+var id;
+id = $(this).attr("data-catid");
+$.ajax(
+{
+    type:"GET",
+    url: "dele",
+    data:{
+             book_id: id
+},success: function( data )
+{
+    $( '#like'+ id ).removeClass('btn btn-primary btn-lg');
+    $( '#like'+ id ).addClass('btn btn-success btn-lg'); } }) }) });
+</script>
+                              <!--  <button class ="book-button " onclick= "show2({{ forloop.counter }})"  value="">{{n.id}} </button>
+                                  <i type="button" class="bcross material-icons" data-catid="{{n.id }}"  id="del{{ n.id }}">cancel</i> </a> -->
+                        </div>
+                        <div class="folder_grp_div d-flex">
+  <div class="folder_grp btn-group">
+
+  <a href=" {% url 'book_summary' value=n.id %}"> <button type="button" onclick="show({{ forloop.counter }})" class="book-button btn btn-secondary"> <i class="fold material-icons">folder_open</i>   {{n.Name}}</button></a>
+    <button type="button" class="bcross btn btn-secondary dropdown-toggle dropdown-toggle-split" id="dropdownMenuReference" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-reference="parent">
+
+      <span class="sr-only">Toggle Dropdown</span>
+
+    </button>  <i type="button" onclick="showodoc()" class="bcross material-icons" data-catid="{{n.id }}"  id="del{{ n.id }}">cancel</i>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuReference">
+         <input type="hidden" value="{{ n.document.name}}" name="{{n.document.name}}">
+      <a onclick="callpdf('{{ n.document.name}}')" class="dropdown-item" href="#">word-meaning</a>
+      <a onclick="callpdf('{{ n.document.name}}')" class="dropdown-item" href="#">Qutations</a>
+
+      <div class="dropdown-divider"></div>
+      <a class="dropdown-item" href="#">Separated link</a>
+    </div>
+  </div>
+</div>
+
+
+                     <!--    <ul onclick="show2({{ forloop.counter }})" class="pdf-text" style="display:none;" >
+                                 <li class="books-atr">
+                                     <input type="hidden" value="{{ n.document.name}}" name="{{n.document.name}}">
+                                     <a class="nav-link" onclick="callpdf('{{ n.document.name}}')" href="#"> {{n.Name}}<span class="sr-only">(current)</span></a>
+
+                                 </li>
+                                <li class="books-atr">
+                                    <a class="nav-link" onclick="callpdf('{{ n.document.name}}')" href="#"> Qaute<span class="sr-only">(current)</span></a>
+
+                                    </li>
+                                <li class="books-atr">
+                                            <p> something</p>
+                                    </li>
+                                <li class="books-atr">
+                                    something
+
+                                    </li>
+                         </ul> -->
+
+            </div>
+{% endfor %}
+      <script>
+                  function showdoc2(){
+
+    var cards = document.getElementsByClassName("import-boo7ks");
+    console.log(cards);
+
+
+    if (cards[0].style.display == "block")
+    {
+    cards[0].classList.toggle("show");
+    cards[0].style.display = "none";}
+    else{cards[0].style.display = "block";
+    cards[0].classList.toggle("show");}
+}
+              </script>
+             <div class="import-boo7ks" style="display:none;">
+            <!-- <form method="post" enctype="multipart/form-data">
+                 {% csrf_token %}
+                    {{ formpdf.as_p }}
+
+                 <button type="submit" name="pdf" value="button2">Upload</button>
+             </form>w-->
+            </div>
+
+            <div>
+            <button>
+                <p>
+                    {{text}}
+                </p>
+            </button>
+            <form action="../home/"> <input type="number" name="page_no"> <input type="submit" value="search" >
+            </form>
+            </div>
+
+        </div>
+</div>
+        </div>
+
+{% endblock content %}
+
+

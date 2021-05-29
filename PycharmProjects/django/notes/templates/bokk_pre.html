@@ -1,0 +1,113 @@
+
+
+{% extends 'index.html' %}
+{% load static %}
+{% block sum %}
+ <link rel="stylesheet" href="{% static 'css/records.css' %}">
+<div class="record_records">
+    <div class="record_img_div">
+<img src = "{{ book.img.url }}" style="width:150px;" class="record_img">
+                <i type="button" class="i_button_rec fas fa-plus btn btn-primary" data-toggle="modal" data-target="#staticBackdrop" onclick="showdoc()">recommend</i>
+        <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+          <!-- main -->
+          {% block rec_form %}
+        <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <form method="POST" id="add_recommend" action="{% url 'breq' %}">
+                    {% csrf_token %}
+                    <label for="rec_u"> User :</label>
+                   <input id="rec_u" class="rec_u" name="t3">
+
+                    <label for="rec_u"> Name :</label>
+                    <input id="rec_book" class="rec_book" name="t4">
+
+                     <label for="rec_u"> Views :</label>
+                    <textarea  id="rec_des" class="rec_des" name="t2"> </textarea>
+
+
+
+            </div>
+        </div>
+        </div>
+
+          <!-- contetn -->
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <input type="submit" value="recomend" name="b1" class="btn btn-Success" >
+       <!-- <input type="submit" name="documentserteent"  value="veerterr" class="btn btn-primary"> -->
+          {% endblock rec_form%}
+          </form>
+      </div>
+    </div>
+  </div>
+</div>
+    </div>
+
+<p id=change>
+
+    {{ book.summary }}
+    The Latin Grammy Lifetime Achievement Award is an honor presented annually by The Latin Recording Academy, the same organization that distributes the Latin Grammy Awards, to commend performers "who have made contributions of outstanding artistic significance to Latin music". Award recipients are honored during "Latin Grammy Week", a string of galas just prior to the annual Latin Grammy Awards ceremony. The awards were first presented to Mercedes Sosa, José José, Roberto Carlos, Willie Colón, and Antonio Aguilar in 2004. José and Carlos were later honored as the
+    {{ book.id }}
+
+
+</p>
+<script>
+    $('#change').click(function(){
+$(this).replaceWith($('<form id="edi_About" method= "POST" action = "{% url 'change_about' %} "> {% csrf_token %}<textarea name="edit_tt" class = "form_record_sum">  '  + this.innerHTML + '</textarea><input name="nid" value="{{ book.id }}" type=hidden><input id=test type=submit></form>'));
+});
+
+$('#test').submit(
+function(){
+
+$(this).replaceWith($('<h5>' + this.innerHTML + '</h5>'));
+});
+
+$(function() {
+    $("#edi_about").submit(function(event) {
+        // Stop form from submitting normally
+        event.preventDefault();
+        var friendForm = $(this);
+        // Send the data using post
+        var posting = $.post( friendForm.attr('action'), friendForm.serialize() );
+        // if success:
+        posting.done(function(data) {
+            // success actions, maybe change submit button to 'friend added' or whatever
+        });
+        // if failure:
+        posting.fail(function(data) {
+            // 4xx or 5xx response, alert user about failure
+        });
+    });
+});
+
+$(function() {
+    $("#add_recommend").submit(function(event) {
+        // Stop form from submitting normally
+        event.preventDefault();
+        var friendForm = $(this);
+        // Send the data using post
+        var posting = $.post( friendForm.attr('action'), friendForm.serialize() );
+        // if success:
+        posting.done(function(data) {
+            // success actions, maybe change submit button to 'friend added' or whatever
+        });
+        // if failure:
+        posting.fail(function(data) {
+            // 4xx or 5xx response, alert user about failure
+        });
+    });
+});
+</script></div>
+
+{% endblock sum %}

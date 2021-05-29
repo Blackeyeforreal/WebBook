@@ -1,0 +1,79 @@
+{% extends "uers/profile.html" %}
+
+{% block work %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/uers/editfriends.css' %}">
+{% for n in fri %}
+<div class="fri_css">
+<img src="{{n.profile.image.url}}" class="frimg">
+<p> {{n}}</p>
+<script >
+    $(function() {
+    $(".fri_block1").submit(function(event) {
+        // Stop form from submitting normally
+        event.preventDefault();
+        var friendForm = $(this);
+        // Send the data using post
+        var posting = $.post( friendForm.attr('action'), friendForm.serialize() );
+        // if success:
+        posting.done(function(data) {
+            // success actions, maybe change submit button to 'friend added' or whatever
+        });
+        // if failure:
+        posting.fail(function(data) {
+            // 4xx or 5xx response, alert user about failure
+        });
+    });
+});
+  $(function() {
+    $("#fri_orm2").click(function(event) {
+        // Stop form from submitting normally
+        event.preventDefault();
+        var friendForm = $(this);
+        // Send the data using post
+        var posting = $.post( friendForm.attr('action'), friendForm.serialize() );
+        // if success:
+        posting.done(function(data) {
+            // success actions, maybe change submit button to 'friend added' or whatever
+        });
+        // if failure:
+        posting.fail(function(data) {
+            // 4xx or 5xx response, alert user about failure
+        });
+    });
+});
+  $(function() {
+    $("#fri_orm3").click(function(event) {
+        // Stop form from submitting normally
+        event.preventDefault();
+        var friendForm = $(this);
+        // Send the data using post
+        var posting = $.post( friendForm.attr('action'), friendForm.serialize() );
+        // if success:
+        posting.done(function(data) {
+            // success actions, maybe change submit button to 'friend added' or whatever
+        });
+        // if failure:
+        posting.fail(function(data) {
+            // 4xx or 5xx response, alert user about failure
+        });
+    });
+});
+</script>
+<form class="fri_block1" action="{% url 'profilef' %}" id="fri_orm1">
+{% csrf_token %}
+    <input name="fri_name" type="hidden" value="{{n}}">
+
+    <input type="submit" name = "fri_bt2" value="unfriend" onclick="unfriend()" class="1 btn btn-Success">
+
+    <input type="hidden" name = "fri_bt3" value="unblock" class="3 btn btn-Success">
+
+    <input type="submit"  name = "fri_bt1" value="block" onclick="unblock()" class="2 btn btn-Success">
+
+</form>
+
+    </div>
+{% endfor %}
+
+
+{% endblock work %}

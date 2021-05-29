@@ -1,0 +1,27 @@
+#id_username{
+  border:none;
+  border-bottom: 1px solid;
+  
+}
+#id_email{
+  border:none;
+  border-bottom: 1px solid;
+  
+}
+#id_password1{
+  border:none;
+  border-bottom: 1px solid;
+  
+}
+#id_password2{
+  border:none;
+  border-bottom: 1px solid;
+  
+}
+.form-group{
+  margin: auto;
+  width: 50%;
+  padding-bottom: 8px; 
+  box-shadow: 0px 5px 4px gray;
+  margin-bottom: 34px;
+}

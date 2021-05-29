@@ -1,0 +1,164 @@
+.sidebar-struct{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+   /* -moz-box-flex: 1 1 auto;
+    flex: 1 1 auto; */
+    flex-direction: column;
+    max-height: 550px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding: 0;
+    width :22%;
+    height: 550px%;
+
+
+
+}
+
+.sidebar-struct-left{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  /*  -moz-box-flex: 1 1 auto;
+    flex: 1 1 auto; */
+    flex-direction: column;
+    max-height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding: 0;
+    width :22%;
+    height: 100%;
+    float: right;
+
+}
+.side-bars{
+    display: flex;
+
+}
+
+.sidebar-index-list{
+    background: black;
+
+}
+
+.sidebar-index-list-books.chapters.onclick{
+    background-color: red;
+}
+
+.header{
+align-items: stretch;
+display: flex;
+position: relative;
+justify-content: space-around;
+height:58px;
+    
+}
+.header-user{
+
+    
+
+  
+}
+.header-user-list{
+    list-style-type: none;
+    list-style: none;
+    justify-content: space-between;
+    display: flex;
+    
+}
+
+.book-text{
+list-style-type: none;
+    list-style: none;
+    display:None
+}
+.books-atr{
+list-style-type: none;
+    list-style: none;
+
+}
+
+.book-button{
+width: 100%;
+height :40px;
+
+}
+.cont-head{
+display:flex;
+justify-content: right;
+}
+
+.book-button{
+ background-color: lightgreen;
+    
+    border: none;
+  color: orange;
+ border: none
+     
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+
+  }
+
+ .i_button{
+     
+  border: none;
+  color: orange;
+  justify-content: flex-end;
+  padding: 15px 22px;
+  text-align: right;
+  text-decoration: none;
+  display: flex;
+     
+  font-size: 16px;
+  margin:  2px;
+  cursor: pointer;
+
+ }
+ .bton_bi{
+   display: flex;
+ }
+
+.bcross{
+    margin-top: 8px;
+    color: orange;
+   border: none;
+    
+}
+.book-button {
+   
+
+
+
+    border-block-color: yellow;
+    
+}
+#prev{
+    border: none;
+    background-color: orange;
+    
+}
+#next{
+     border: none;
+    background-color: orange;
+}
+
+.container-fluid{
+    margin: 0px;
+    padding-left: 0px;
+}
+
+.cnav{
+    height: 30%
+}

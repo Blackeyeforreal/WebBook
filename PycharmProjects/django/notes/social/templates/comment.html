@@ -1,0 +1,22 @@
+{% extends "Main_Truct.html" %}
+{% load static %}
+{% block content %}
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src = "{% static 'script/indexjs.js' %}"> </script>
+<script src = "{% static 'script/jq.js' %}"> </script>
+                <form method="POST" action="{% url 'test_comment' %}" id="friend_form">
+
+
+                    {% csrf_token %}
+
+
+                    <textarea type="text"  name="t3">
+
+                    </textarea>
+
+                    <input type="submit" value="submit" data-catid="5" name="b1" class="btn btn-Success"  >
+                </form>
+
+        </div>
+ {% endblock content %}
+

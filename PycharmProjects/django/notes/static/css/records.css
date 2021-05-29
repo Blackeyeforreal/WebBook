@@ -1,0 +1,24 @@
+.record_records{
+  width: 40%;
+  margin-left:30%;
+  margin-right: 8%;
+  margin-top: 7%;
+  
+}
+
+.record_img{
+  margin-bottom:10%; 
+}
+#test{
+  border:none;
+}
+.form_record_sum{
+  height:90%;
+}
+
+.i_button_rec{
+  margin: auto;
+  margin-left:40%; 
+  margin-bottom: 50%; 
+  width: 26%;
+}

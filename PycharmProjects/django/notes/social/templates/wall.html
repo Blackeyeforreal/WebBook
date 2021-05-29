@@ -1,0 +1,253 @@
+{% extends 'Main_truct.html' %}
+{% load static %}
+{% block content %}
+  <link rel="stylesheet" href="{% static 'css/wall.css' %}">
+<container class = "the_wall" style="background-image: url({% static 'css/bg.jpeg' %}); background-attachment: fixed; ">
+
+    <div class="left-sec bt" >
+        <div class="head_sub">
+            <p class="heading_p">
+            Subscription</p>
+        </div>
+        <form action="{% url 'wall' %}" method="post">
+
+
+        {% csrf_token %}
+        {% for n in fri%}
+        <div class="friend_list">
+            <input type="hidden" name="{{n}}"value="{{n.id}}">
+          <input type="submit" name="fname" value="{{n}}" class="fp_S"></input>
+
+            <img class="fpro rounded-circle" border="" src="{{n.profile.image.url}}">
+            <i class="arr-b material-icons">keyboard_arrow_right</i>
+       </div>
+        {% endfor %}
+        </form>
+
+    </div>
+
+    <div class="maza rounded-b">
+
+    </div>
+
+    <div class="middle" >
+        <h4> THE WALL</h4>
+        <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src = "{% static 'script/indexjs.js' %}"> </script>
+<script src = "{% static 'script/jq.js' %}"> </script>
+        <script >$(function() {
+    $("#Comment_form").submit(function(event) {
+        // Stop form from submitting normally
+        event.preventDefault();
+        var friendForm = $(this);
+        // Send the data using post
+        var posting = $.post( friendForm.attr('action'), friendForm.serialize() );
+        // if success:
+        posting.done(function(data) {
+                $(friendForm)[0].reset()
+        });
+        // if failure:
+        posting.fail(function(data) {
+            // 4xx or 5xx response, alert user about failure
+        });
+    });
+});
+
+$(function() {
+    $("#Comment_form").submit(function(event) {
+        // Stop form from submitting normally
+        event.preventDefault();
+        var friendForm = $(this);
+        // Send the data using post
+        var posting = $.post( friendForm.attr('action'), friendForm.serialize() );
+        // if success:
+        posting.done(function(data) {
+                $(friendForm)[0].reset()
+        });
+        // if failure:
+        posting.fail(function(data) {
+            // 4xx or 5xx response, alert user about failure
+        });
+    });
+});
+
+$(function() {
+    $(".bmark").click(function(event) {
+        // Stop form from submitting normally
+        event.preventDefault();
+        var friendForm = $(this);
+        // Send the data using post
+        var posting = $.get( friendForm.attr('href'), friendForm.serialize() );
+        // if success:
+        posting.done(function(data) {
+
+        });
+        // if failure:
+        posting.fail(function(data) {
+            // 4xx or 5xx response, alert user about failure
+        });
+    });
+});
+</script>
+        {% for n in allp %}
+        <div class="post card">
+
+            <a href="/bookmark/{{n.id}}" class="bookm" id="dk_r"  > <button class="bmark " id="idk" href="/bookmark/{{n.id}}"  ><i  class="bookm  btn-success material-icons"  >bookmark</i> </button> </a>
+
+
+            <div class="subject-pf">
+            <img class="profile_pic rounded-circle" src=" {{n.user.profile.image.url }}">
+                <p class="psub">Subject: {{n.psub}}</p>
+                </div>
+            <div class="refer">
+                <p> refrence: {{n.pdes}}</p>
+            </div>
+
+            <div class="arrow">
+            </div>
+            <p class="pdes rounded"> {{n.ptags}}</p>
+            <div class="likesec">
+            <i class="like material-icons">donut_large</i>
+                <i class="like material-icons">comment</i>
+                </div>
+            <div class="comments">
+                {% for x in allpc.n %}
+                <p> {{ x}}</p>
+                {% endfor %}
+            </div>
+        </div>
+            <div class="comment_sec">
+                <form class="comment-form" method="POST" action="{% url 'test_comment' %}" id="Comment_form">
+                    {% csrf_token %}
+
+                    <input type="hidden" name="t1" value="{{n.id}}">
+                    <input type="hidden" name="t2">
+         <textarea  class="comment_input" name="t3"  aria-label="even: "> </textarea>
+                 <button class="comment_submit" type="submit">   <i class="material-icons" > create </i> </button>
+                </form>
+            </div>
+       {% endfor %}
+    </div>
+
+    <div class="right-sec">
+
+        <div class="rec">
+            <p class="A_recc">Recomendations</p>
+            <div class="rec_img">
+            <img class="rec_book" src="../media/default_book.png">
+                </div>
+            {% for n in allrec %}
+            <div class="rec_name">
+            <p class="mySlides"> {{n.bdes}}</p>
+            <p class="mySlides"> erterte</p>
+            </div>
+            </div>
+       {% endfor %}
+            <script>
+    var slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}
+  slides[slideIndex-1].style.display = "block";
+  setTimeout(showSlides, 2000); // Change image every 2 seconds
+}
+
+$(function() {
+    $("#friend_form_post").submit(function(event) {
+        // Stop form from submitting normally
+        event.preventDefault();
+        var friendForm = $(this);
+        // Send the data using post
+        var posting = $.post( friendForm.attr('action'), friendForm.serialize() );
+        // if success:
+        posting.done(function(data) {
+                    $(friendForm)[0].reset()
+        });
+        // if failure:
+        posting.fail(function(data) {
+            // 4xx or 5xx response, alert user about failure
+        });
+    });
+
+});
+$(function() {
+    $(".accept_ajax").submit(function(event) {
+        // Stop form from submitting normally
+        event.preventDefault();
+        var friendForm = $(this);
+        // Send the data using post
+        var posting = $.post( friendForm.attr('action'), friendForm.serialize() );
+        // if success:
+        posting.done(function(data) {
+                    $(friendForm)[0].reset()
+        });
+        // if failure:
+        posting.fail(function(data) {
+            // 4xx or 5xx response, alert user about failure
+        });
+    });
+
+});
+</script>
+            <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src = "{% static 'script/indexjs.js' %}"> </script>
+<script src = "{% static 'script/jq.js' %}"> </script>
+
+
+
+
+        <div class="idea">
+            <h1> <div class="containerer">
+        <div class="">
+            <div class="yp">
+                <div class="head_sub2">
+            <p class="heading_p2">
+            Add your write up...</p>
+        </div>
+                <form method="POST" class="instpo" action="{% url 'edit' %}" id="friend_form1">
+                    {% csrf_token %}
+                   <input class="instp" value="" name="t2" placeholder="Please enter the subject">
+                    <input class="instp" value="" name="t3" placeholder="Refrence">
+                    <textarea class="instptext" value="" name="t4" placeholder="type here">
+
+                    </textarea>
+
+                    <input type="submit" value="Insert"  data-catid="5" name="b1" class="btn btn-Success" >
+                </form>
+            </div>
+        </div>
+        </div>
+            </h1>
+
+        </div>
+
+        <div>
+                {% for n in req %}
+
+                    <form action="{% url 'fr_request_acc'  %}" method="POST" id="friend_req">
+                        {% csrf_token %}
+
+                    <input type="submit" value="accep">
+                 </form>
+          {{n.id}}</a>
+            {% endfor %}
+
+
+
+
+        </div>
+
+
+    </div>
+
+
+</container>
+
+{% endblock content %}

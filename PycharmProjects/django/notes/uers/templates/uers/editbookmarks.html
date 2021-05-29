@@ -1,0 +1,103 @@
+{% extends "uers/profile.html" %}
+
+{% block work %}
+{% load static %}
+  <link rel="stylesheet" href="{% static 'css/uers/wall2.css' %}">
+<link rel="stylesheet" href="{% static 'css/uers/editfriends.css' %}">
+{% for n in fri %}
+ <div class="post card">
+
+            <a href="/bookmark/{{n.id}}" class="bookm" > <button class="bmark" href="/bookmark/{{n.id}}"  ><i  class="bookm material-icons" type=button  >bookmark</i> </button> </a>
+
+        <!--    <i class="bookm material-icons" type=button id="bmark" >bookmark</i> -->
+            <div class="subject-pf">
+            <img class="profile_pic rounded-circle" src=" {{n.user.profile.image.url }}">
+                <p class="psub">Subject: {{n.psub}}</p>
+                </div>
+            <div class="refer">
+                <p> refrence:  dfsfsdfsdfsdfsdfsdf</p>
+            </div>
+
+            <div class="arrow">
+            </div>
+            <p class="pdes rounded"> {{n.ptags}}</p>
+            <div class="likesec">
+            <i class="like material-icons">donut_large</i>
+                <i class="like material-icons">comment</i>
+                </div>
+
+        </div>
+            <div class="comment_sec">
+                <form class="comment-form" method="POST" action="{% url 'test_comment' %}" id="Comment_form">
+                    {% csrf_token %}
+                    <input type="number" name="t2" value="{{n.id}}">
+                    <input type="hidden" name="t1" value="{{n.id}}">
+
+                    <textarea  class="comment_input" name="t3"  aria-label="even: "> </textarea>
+                    <input class="comment_submit " type="submit" >  <i class="material-icons"> create </input></i>
+                </form>
+            </div>
+<!--<div class="fri_css">
+
+<p> {{n.pdes}}
+    {{n.ptags}}</p>
+<script >
+    $(function() {
+    $("#fri_orm1").click(function(event) {
+        // Stop form from submitting normally
+        event.preventDefault();
+        var friendForm = $(this);
+        // Send the data using post
+        var posting = $.post( friendForm.attr('action'), friendForm.serialize() );
+        // if success:
+        posting.done(function(data) {
+            // success actions, maybe change submit button to 'friend added' or whatever
+        });
+        // if failure:
+        posting.fail(function(data) {
+            // 4xx or 5xx response, alert user about failure
+        });
+    });
+});
+  $(function() {
+    $("#fri_orm2").click(function(event) {
+        // Stop form from submitting normally
+        event.preventDefault();
+        var friendForm = $(this);
+        // Send the data using post
+        var posting = $.post( friendForm.attr('action'), friendForm.serialize() );
+        // if success:
+        posting.done(function(data) {
+            // success actions, maybe change submit button to 'friend added' or whatever
+        });
+        // if failure:
+        posting.fail(function(data) {
+            // 4xx or 5xx response, alert user about failure
+        });
+    });
+});
+  $(function() {
+    $("#fri_orm3").click(function(event) {
+        // Stop form from submitting normally
+        event.preventDefault();
+        var friendForm = $(this);
+        // Send the data using post
+        var posting = $.post( friendForm.attr('action'), friendForm.serialize() );
+        // if success:
+        posting.done(function(data) {
+            // success actions, maybe change submit button to 'friend added' or whatever
+        });
+        // if failure:
+        posting.fail(function(data) {
+            // 4xx or 5xx response, alert user about failure
+        });
+    });
+});
+</script>
+
+
+    </div> -->
+{% endfor %}
+
+
+{% endblock work %}

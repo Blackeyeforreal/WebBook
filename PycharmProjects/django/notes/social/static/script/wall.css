@@ -1,0 +1,85 @@
+
+.the_wall{
+
+
+display: flex;
+flex-direction: row;
+}
+
+.profile_pic{
+margin-bottom: 30px;
+ height: 50;
+  width: 50;
+}
+
+.middle{
+display:flex;
+flex-direction:column;
+}
+
+.pdes{
+margin-bottom: 30px;
+
+}
+
+.arrow{
+    border-bottom: 18px solid #fff;
+    border-bottom-color: rgb(255, 255, 255);
+border-left: 18px solid transparent;
+border-right: 18px solid transparent;
+bottom: -18px;
+height: 0;
+background-color:black;
+transform: translateX(21%);
+width: 0;
+z-index: 1;
+
+
+}
+
+.friend_list{
+display:flex;
+flex-direction:row;
+background-color:azure;
+
+}
+.fpro{
+    height: 50px;
+    width: 50px;
+}
+
+.fp{
+    margin: auto;
+    padding-right:10px
+ 
+}
+.instp{
+    height: 31px;
+    width: 100%;
+        border-top-width: 0;
+border-left-width: 0;
+border-right-width: 0;
+padding-left: 0;
+}
+.instpo{
+    display: flex;
+    flex-direction: column;
+    
+}
+.yp{
+    display: flex;
+    flex-direction: column;
+}
+.rec{
+    min-height: 70%;
+}
+
+.left-sec{
+
+    border-bottom: 18px solid ;
+    border-bottom-color: rgb(255, 255, 255);
+border-left: 18px solid ;
+border-right: 18px solid ;
+border-color: orange;
+
+}

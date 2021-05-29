@@ -1,0 +1,70 @@
+.profile_img1{
+    height: 150px;
+    width: 150px;
+
+  
+  margin-left: 36%;
+  margin-right: auto;
+  
+
+}
+
+.container{
+display:flex;
+}
+
+.account-heading{
+  margin: auto;
+  width: 19%
+}
+
+.text-secondary{
+  margin: auto;
+  width: 15%
+}
+
+.pr_header{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  
+}
+.img_header{
+ width: 34%
+  
+}
+.profile_work{
+  width: 70%;
+  align-content: center;
+  align-self: center;
+  
+}
+
+.main_con{
+  width: 70%;
+  margin:auto;
+
+  margin-top: 4%;
+}
+.form-group{
+  margin-left: 20%
+}
+.about{
+  margin-top: 2%;
+  margin-bottom: 2%;
+  
+  height: max-content;
+  width: max-content;
+  border-top: 0px;
+  
+    border-left: 0px;
+  border-right: 0px;
+  border-color: black;
+  border-block-style:  groove;
+  
+}
+
+#id_about{
+  
+}

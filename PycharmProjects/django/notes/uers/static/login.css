@@ -1,0 +1,22 @@
+.profile_img1{
+    height: 150px;
+    width: 150px;
+    display: block;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+.container{
+display:flex;
+}
+
+.account-heading{
+  margin: auto;
+  width: 15%
+}
+
+.text-secondary{
+  margin: auto;
+  width: 15%
+}

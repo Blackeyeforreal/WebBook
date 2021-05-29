@@ -1,0 +1,186 @@
+
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>index</title>
+    <!-- fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200;0,400;1,200&family=Overlock:wght@900&family=Work+Sans:wght@300;400&display=swap" rel="stylesheet">  <!--     font-family: 'Mulish', sans-serif;
+
+    font-family: 'Overlock', cursive;
+
+    font-family: 'Work Sans', sans-serif;-->
+    <link href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Cookie&display=swap" rel="stylesheet">  <!--     font-family: 'Berkshire Swash', cursive;
+
+    font-family: 'Cookie', cursive; -->
+    <link href="https://fonts.googleapis.com/css2?family=Overlock:wght@900&display=swap" rel="stylesheet"> <!-- font-family: 'Overlock', cursive; -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap" rel="stylesheet"> <!-- font-family: 'Poppins', sans-serif;-->
+    <!-- CSS only -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+<script src='https://kit.fontawesome.com/a076d05399.js'></script>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+       <script src="//mozilla.github.io/pdf.js/build/pdf.js"></script>
+
+    <!-- JS, Popper.js, and jQuery -->
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+ <!--   <script src = "{% static 'script/simple.js' %}"> </script> -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<!--- <header class="header">
+    <h1 class="header-heading"> Ocean diarie</h1>
+    <div class="header-user">
+        <ul class="header-user-list">
+            <li> <div>werwer</div></li>
+            <li> <div>dfgfdgw</div></li>
+            <li> <div>
+                log_in
+            </div></li>
+            <li>
+                <div> sign in</div>
+            </li>
+
+        </ul >
+
+    </div>
+    <div></div> -->
+
+</header>
+
+<container class="container-fluid">
+    <nav class="cnav navbar navbar-expand-lg navbar-light">
+  <a class="navbar-brand" href="#">Ocean diaries</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="{% url 'wall' %}">Home <span class="sr-only">(current)</span></a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'home' %}"> Documents </a>
+      </li>
+
+    <!--  <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Dropdown
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </li> -->
+
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+      </li>
+
+    </ul>
+      <ul class="navbar-nav mr-auto">
+          {% if user.is_authenticated %}
+
+          <li class="nav-item"> <a  href="{% url 'profile' %}" ><img class="fp rounded-circle" src="{{user.profile.image.url}}"> </a> </li>
+            <li> <a class="nav-link" href="{% url 'logout' %}">log out</a></li>
+           <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Request
+        </a>
+
+   <!--     <div class="dropdown-menu" aria-labelledby="navbarDropdown">tgjlki
+
+          <a class="dropdown-item" href="#"> {{n}}</a> -->
+
+               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+                {% for n in freq %}
+                   <div class="dropdown-item">
+                    <form action="{% url 'fr_request_acc'  %}" class="accept_ajax" method="POST" id="friend_req">
+                        {% csrf_token %}
+                         <p class="req_p">
+                             {{n.from_user}}
+                         </p>
+                        <input type="hidden" name="freqq" value="{{n}}">
+                        <img class="req_pro" src="{{ n.from_user.profile.image.url}}">
+                    <input type="submit"  class="rec_bt" name="axx" value="Accept">
+                        <input type="submit"  class="rec_bt" name="reject" value="Reject">
+                 </form>
+        </div>
+            {% endfor %}
+
+
+
+
+
+
+                   </div>
+      </li>
+          <li>
+                <script src="{% static 'script/jq.js' %}"></script>
+              <form action="{% url 'fr_request'  %}" method="POST" id="friend_form">
+                        {% csrf_token %}
+                  <input  class="req_id" type="text" name="friend_id" value="4" />
+                    <input class="req_img" type="submit" value="send"/>
+                 </form>
+          </li>
+          {% else %}
+
+            <li class="nav-item"> <a class="nav-link" href="{% url 'register' %}"> Sign_in </a>  </li>
+
+
+          {% endif %}
+
+
+      </ul>
+
+
+
+
+   <!-- <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form> -->
+  </div>
+</nav>
+
+<!-- hhead ends over here -->
+
+
+<!--<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <input id="id_docfile"  type="file" name="myfile">
+    <button type="submit">Upload</button>
+  </form> -->
+{% if messages %}
+    {% for message in messages%}
+        <div class="alert alert-{{ message.tags }}">
+            {{ message }}
+        </div>
+    {% endfor  %}
+
+
+
+{% endif%}
+{% block content %}
+{% endblock content %}
+
+
+
+
+
+</body>
+</html>

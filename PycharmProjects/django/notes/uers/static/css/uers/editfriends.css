@@ -1,0 +1,23 @@
+.frimg{
+  width: 60px;
+  height: 60px;
+  border-radius: 100px;
+  margin-bottom: 10px;
+}
+
+.fri_css{  
+  
+  width: 40%;
+  margin: auto;
+  display: flex;
+  justify-content:  space-around;
+   
+}
+.fri_block{
+ margin-left: 60%;
+  
+}
+
+.ri_nae{
+  margin-top: 10px;
+}

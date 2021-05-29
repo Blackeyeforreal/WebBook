@@ -1,0 +1,172 @@
+.sidebar-struct{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+   /* -moz-box-flex: 1 1 auto;
+    flex: 1 1 auto; */
+    flex-direction: column;
+    max-height: 550px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding: 0;
+    width :22%;
+    height: 550px%;
+
+
+
+}
+.pdf{
+    min-width: 60%;
+}
+
+.sidebar-struct-left{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  /*  -moz-box-flex: 1 1 auto;
+    flex: 1 1 auto; */
+    flex-direction: column;
+    max-height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding: 0;
+    width :22%;
+    height: 100%;
+    float: right;
+
+}
+.side-bars{
+    display: flex;
+
+}
+
+.sidebar-index-list{
+    background: black;
+
+}
+
+.sidebar-index-list-books.chapters.onclick{
+    background-color: red;
+}
+
+.header{
+align-items: stretch;
+display: flex;
+position: relative;
+justify-content: space-around;
+height:58px;
+    
+}
+.header-user{
+
+    
+
+  
+}
+.header-user-list{
+    list-style-type: none;
+    list-style: none;
+    justify-content: space-between;
+    display: flex;
+    
+}
+
+.book-text{
+list-style-type: none;
+    list-style: none;
+    display:None
+}
+.books-atr{
+list-style-type: none;
+    list-style: none;
+
+}
+
+.book-button{
+width: 100%;
+height :40px;
+
+}
+.cont-head{
+display:flex;
+justify-content: right;
+}
+
+.book-button{
+ background-color: #a3f9f9;
+    
+    border: none;
+  color: orange;
+ border: none
+     
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+
+  }
+
+ .i_button{
+     
+  border: none;
+  color: #555;
+  justify-content: flex-end;
+  padding: 15px 22px;
+  text-align: right;
+  text-decoration: none;
+  display: flex;
+     
+  font-size: 16px;
+  margin:  2px;
+  cursor: pointer;
+
+ }
+ .bton_bi{
+   display: flex;
+ }
+
+.bcross{
+    margin-top: 8px;
+    color: #555;
+   border: none;
+    
+}
+.book-button {
+   
+
+
+
+    border-block-color: #1e1e1e;
+    
+}
+#prev{
+    border: none;
+    background-color: #e3e3e3;
+    
+}
+#next{
+     border: none;
+    background-color: #ffd5d5;
+}
+.container-fluid{
+  padding-left: 0px;
+}
+.cnav{
+    height: 45px;
+}
+.body{
+    font-family: "Segoe UI","Helvetica Neue","Lucida Grande","Roboto","Ebrima","Nirmala UI","Gadugi","Segoe Xbox Symbol","Segoe UI Symbol","Meiryo UI","Khmer UI","Tunga","Lao UI","Raavi","Iskoola Pota","Latha","Leelawadee","Microsoft YaHei UI","Microsoft JhengHei UI","Malgun Gothic","Estrangelo Edessa","Microsoft Himalaya","Microsoft New Tai Lue","Microsoft PhagsPa","Microsoft Tai Le","Microsoft Yi Baiti","Mongolian Baiti","MV Boli","Myanmar Text","Cambria Math";
+}
+
+.fp{
+    height: 50px;
+        width:50px;
+}

@@ -1,0 +1,53 @@
+{% extends "Main_truct.html" %}
+{% block content %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/uers/login.css' %}">
+<div class="log">
+    <form method="post">
+        {% csrf_token %}
+        <fieldset class="form-group">
+            <lengend class="login"> Login</lengend>
+
+            {{ form.non_field_errors }}
+            <div class="login-block" fieldwrapper>
+
+                {{ form.username.errors }}
+                <label for="{{ form.username.id_for_lable }}">
+                    username
+                </label>
+                {{ form.username }}
+            </div>
+             <div class=""fieldwrapper>
+
+                {{ form.passwords.errors }}
+                <label for="{{ form.password.id_for_lable }}">
+                   passwords
+                </label>
+                {{ form.password}}
+            </div>
+
+
+
+
+
+
+        </fieldset>
+
+
+        <div class="form-group">
+            <button class="btn.btn-primary" type="submit">login</button>
+        </div>
+
+
+    </form>
+        <div class="border-top pt-3">
+            <small class="text-muted">
+               need AN ACCOUTN <a class="ml-2" herf="#">sign in</a>
+            </small> </div>
+
+</div>
+
+
+
+
+{% endblock content %}

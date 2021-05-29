@@ -1,0 +1,127 @@
+
+.the_wall{
+
+background-color: azure;
+display: flex;
+flex-direction: row;
+}
+
+.profile_pic{
+ height: 40px;
+  width: 40px;
+/*! margin: auto; */
+}
+
+.middle{
+    min-width: 45%;
+    background-color: #fff9f9;
+display:flex;
+flex-direction:column;
+}
+
+.pdes{
+    
+    box-shadow: 34px;
+    background-color: white;
+margin:34;
+
+}
+
+.arrow{
+    border-bottom: 18px solid #fff;
+    border-bottom-color: rgb(255, 255, 255);
+border-left: 18px solid transparent;
+border-right: 18px solid transparent;
+bottom: -18px;
+height: 0;
+
+transform: translateX(21%);
+width: 0;
+z-index: 1;
+
+
+}
+
+.friend_list{
+display:flex;
+flex-direction:row;
+
+
+}
+.fpro{
+    height: 50px;
+    width: 50px;
+}
+
+.fp_S{
+    border: none;
+    background-color: transparent;
+    border-bottom: 1px solid;
+        
+  
+    margin: auto;
+    font-size: 30px;
+    padding-right:10px
+ 
+}
+.instp{
+    height: 31px;
+    width: 100%;
+        border-top-width: 0;
+border-left-width: 0;
+border-right-width: 0;
+padding-left: 0;
+}
+.instpo{
+    display: flex;
+    flex-direction: column;
+    
+}
+.yp{
+    display: flex;
+    flex-direction: column;
+}
+.rec{
+
+border-left: 1px solid ;
+
+    margin-left: 20px;
+   
+    width: 90%;
+    min-height: 15%;
+}
+.maza{
+ 
+    width: 40%;
+    background-color:#fff9f9;;
+}
+
+.left-sec{
+    
+position: fixed;
+    background-color: white;
+min-height: 80%;
+margin-right: 34;
+    min-width: 20%;
+
+border-right: 1px solid ;
+
+}
+.subject-pf{
+    display: flex;
+    
+    background-color: #fbfbfb;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.arr-b{
+    margin: auto;
+    font-size: 29px;
+}
+.psub{
+    margin: auto;
+}
+
+
+ 

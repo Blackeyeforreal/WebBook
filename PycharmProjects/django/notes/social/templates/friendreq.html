@@ -1,0 +1,13 @@
+{% extends "Main_Truct.html" %}
+{% load static %}
+{% block content %}
+<script src="{% static 'script/jq.js' %}"></script>
+
+<form action="{% url 'fr_request'  %}" method="POST" id="friend_form">
+    {% csrf_token %}
+    <input type="te" name="friend_id" value="4" />
+        <input type="submit" value="Add friend"/>
+
+</form>
+
+{% endblock content %}
